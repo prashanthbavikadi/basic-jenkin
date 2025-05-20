@@ -38,7 +38,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo this is build'
+                sh ''
             }
         }
         stage('Test') {
@@ -48,7 +48,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo this is deploy'
+                sh """
+                sh 01-ping.yaml
+                sh 03-variable.sh
+                """
             }
         }
     }
