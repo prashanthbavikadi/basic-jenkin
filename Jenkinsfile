@@ -49,7 +49,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                sh 01-ping.yaml
                 sh 03-variable.sh
                 """
             }
